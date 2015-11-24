@@ -1,9 +1,23 @@
 module.exports = {
-    tree: tree,
+    get: function () { return tree; },
     Node: Node,
-    orderTree: orderTree,
-    find: find
+    tri: orderTree,
+    trouve: find,
+    isNode: _isNode,
+    isLeaf: _isLeaf,
 };
+
+function _isNode(node) {
+    return node.getLeft() == null || typeof node.getRight() == null
+        && typeof node.getValue() === 'string'
+        ;
+}
+function _isLeaf(node) {
+    return node.getLeft() == null
+        && typeof node.getValue() === 'string'
+        && node.getRight() === null
+        ;
+}
 
 function Node(argLeft, argValue, argRight) {
 
@@ -30,8 +44,6 @@ var tree = new Node(new Node(new Node(new Node(new Node(null, 'B', null), 'C', n
 console.log(tree);
 
 function orderTree(t) {
-
-
 }
 
 orderTree(tree);
@@ -39,7 +51,7 @@ orderTree(tree);
 //console.log('Values : '+tree);
 
 function find(v, t) {
-
+    return 'find you ;)'
 }
 
 

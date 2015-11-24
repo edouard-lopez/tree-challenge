@@ -1,19 +1,23 @@
-var assert = require('chai').assert;
-tree = require('../app/tree');
+var assert = require('chai').assert,
+    arbre = require('../app/tree')
+    ;
 
 describe('solution', function () {
     beforeEach(function () {
-        console.log(tree);
     });
 
-    it('should test a ok method', function () {
-        var value = 'hello';
-        assert.equal(value, 'hello');
+    it('should test if node is a node', function () {
+        nodeA = arbre.Node('X', 'A', 'Y');
+        nodeB = arbre.Node(null, 'B', 'Y');
+        nodeC = arbre.Node('X', 'C', null);
+
+        assert.isTrue(arbre.isNode(nodeA));
+        assert.isTrue(arbre.isNode(nodeB));
+        assert.isTrue(arbre.isNode(nodeC));
     });
-    it('should test a ok method', function () {
-        assert.ok('meth1od is ok');
-    });
-    it('should test a fail method', function () {
-        assert.fail();
+    it('should test if node is a leaf', function () {
+        leaf = arbre.Node(null, 'C', null);
+
+        assert.isTrue(arbre.isLeaf(node));
     });
 });
