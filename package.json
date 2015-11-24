@@ -13,21 +13,15 @@
     "gulp-concat": "2.5.x",
     "gulp-flatten": "0.0.4",
     "gulp-imagemin": "2.2.x",
-    "gulp-karma": "0.0.4",
     "gulp-load-plugins": "0.10.x",
     "gulp-rename": "1.2.x",
     "gulp-uglify": "1.2.x",
-    "karma": "0.13.x",
-    "karma-chai": "0.1.x",
-    "karma-jasmine": "0.3.x",
-    "karma-mocha": "0.2.x",
-    "karma-phantomjs-launcher": "0.1.x",
     "mocha": "2.3.x"
   },
   "scripts": {
     "postinstall": "gulp build",
     "prestart": "npm install",
-    "test": "node node_modules/karma/bin/karma start test/karma.conf.js"
+    "test": "node node_modules/mocha/bin/mocha --ui bdd --reporter min --recursive ./tests"
   },
   "engines": {
     "node": ">=0.10.0"

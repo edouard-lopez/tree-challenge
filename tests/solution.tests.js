@@ -1,4 +1,5 @@
-var assert = chai.assert;
+var assert = require('chai').assert;
+tree = require('../app/tree');
 
 describe('solution', function () {
     beforeEach(function () {
