@@ -1,5 +1,5 @@
-function _isNode(node) {
-    return node.getLeft() == null || typeof node.getRight() == null
+function _isParent(node) {
+    return (node.getLeft() !== null || typeof node.getRight() !== null)
         && typeof node.getValue() === 'string'
         ;
 }
@@ -62,6 +62,6 @@ module.exports = {
     Node: Node,
     tri: orderTree,
     trouve: find,
-    isNode: _isNode,
+    isParent: _isParent,
     isLeaf: _isLeaf
 };
