@@ -13,12 +13,18 @@ describe('solution', function () {
         assert.isTrue(tree.isParent(node2));
         assert.isTrue(tree.isParent(node3));
         assert.isTrue(tree.isParent(node4));
-    })
+    });
+
+    it('should verify node is a leaf', function () {
+        var node = new tree.Node(null, 'B', null);
+
+        assert.isTrue(tree.isLeaf(node));
+    });
 
     it('should return leaf value', function () {
         var node = new tree.Node(null, 'A', null);
         var expectedValues = ['A'];
-        assert.deepEqual(expectedValues, tree.print(node))
-    })
+        assert.deepEqual(expectedValues, tree.print(node));
+    });
 
 });
