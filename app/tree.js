@@ -52,13 +52,25 @@ function find(v, t) {
 
 //console.log('salut');
 
-function _print(node){
-    return [node.getValue()];
+function _print(node, t) {
+    t = typeof t !== 'undefined' ? t : [];
+    var nodeValue = node.getValue();
+    var leftLeaf = node.getLeft();
+    var rightLeaf = node.getRight();
+    if (leftLeaf && rightLeaf) {
+        _print(leftLeaf, t);
+        t.push(nodeValue);
+        _print(rightLeaf, t);
+        return t;
+    }
+    t.push(nodeValue)
 }
 
 module.exports = {
     print: _print,
-    get: function () { return tree; },
+    get: function () {
+        return tree;
+    },
     Node: Node,
     tri: orderTree,
     trouve: find,
